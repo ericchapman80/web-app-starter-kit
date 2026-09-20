@@ -26,6 +26,24 @@ npm run dev
 
 Open `http://localhost:3000`. The operational health endpoint is `http://localhost:3000/api/health`.
 
+## Stop the local environment
+
+In the terminal running `npm run dev`, press `Ctrl+C` to stop the Next.js development server.
+
+Stop the PostgreSQL container and remove the project network with:
+
+```sh
+docker-compose down
+```
+
+When you are finished with all container-based projects, stop the Colima runtime with:
+
+```sh
+colima stop
+```
+
+Stopping Colima is optional if you plan to keep using containers.
+
 ## Verification
 
 ```sh
