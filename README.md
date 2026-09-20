@@ -11,10 +11,11 @@ On macOS with Homebrew, the recommended lightweight setup is:
 ```sh
 brew bundle
 
-# Configure nvm once in your shell, then load it.
+# Configure nvm once in your shell. Add these two lines to ~/.zshrc
+# manually; do not append them every time you set up the project.
 mkdir -p ~/.nvm
-echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
-echo '[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"' >> ~/.zshrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"
 source ~/.zshrc
 
 nvm install
@@ -52,6 +53,16 @@ colima stop
 ```
 
 Stopping Colima is optional if you plan to keep using containers.
+
+### If Homebrew installation was interrupted
+
+Pressing `Ctrl+C` normally stops the active Homebrew command safely. Check for an active Homebrew process with:
+
+```sh
+ps aux | grep '[b]rew'
+```
+
+If no install process is listed, rerun `brew bundle`. An existing Homebrew `node` installation can remain on the machine; nvm takes precedence after `nvm use` and does not require removing it.
 
 ## Verification
 
