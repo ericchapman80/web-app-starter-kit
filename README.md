@@ -4,11 +4,12 @@ This repository contains a reusable M0 web-app foundation. Consuming application
 
 ## Local development
 
-Requirements: Node.js 20+, npm, and Docker.
+Requirements: Node.js 20+, npm, and a Docker-compatible runtime such as Docker Desktop, Colima, or Rancher Desktop.
 
 ```sh
 cp .env.example .env.local
-docker compose up -d postgres
+# Use `docker-compose` with standalone Compose, or `docker compose` with the plugin.
+docker-compose up -d postgres
 npm install
 npm run db:migrate
 npm run dev
