@@ -1,2 +1,4 @@
 # Docker-compatible runtime for newer macOS and Apple silicon.
 brew "colima"
+brew "docker"
+brew "docker-compose"

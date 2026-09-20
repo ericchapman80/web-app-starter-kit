@@ -3,10 +3,6 @@
 # The setup script selects a Docker-compatible runtime for the machine.
 # Run: ./scripts/setup-macos.sh
 
-# Docker CLI and standalone Compose command.
-brew "docker"
-brew "docker-compose"
-
 # Node.js version manager. The project version is declared in .nvmrc.
 brew "nvm"
 

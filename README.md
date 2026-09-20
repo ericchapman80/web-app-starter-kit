@@ -23,7 +23,7 @@ nvm use
 colima start
 ```
 
-`Brewfile` installs shared tools. The setup script automatically selects Rancher Desktop for older Intel Macs running macOS 12 or earlier, and Colima for newer Intel Macs and Apple silicon. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
+`Brewfile` installs shared tools. The setup script automatically selects Rancher Desktop for older Intel Macs running macOS 12 or earlier, and Colima for newer Intel Macs and Apple silicon. Rancher Desktop supplies Docker Compose directly; the Colima path installs standalone Compose. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
 
 To choose a runtime explicitly:
 
@@ -34,8 +34,7 @@ WEB_APP_STARTER_RUNTIME=colima ./scripts/setup-macos.sh
 
 ```sh
 cp .env.example .env.local
-# Use `docker-compose` with standalone Compose, or `docker compose` with the plugin.
-docker-compose up -d postgres
+./scripts/compose.sh up -d postgres
 npm install
 npm run db:migrate
 npm run dev
@@ -50,7 +49,7 @@ In the terminal running `npm run dev`, press `Ctrl+C` to stop the Next.js develo
 Stop the PostgreSQL container and remove the project network with:
 
 ```sh
-docker-compose down
+./scripts/compose.sh down
 ```
 
 When you are finished with all container-based projects, stop the Colima runtime with:
