@@ -1,11 +1,13 @@
 import { config } from "dotenv";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
-import { db } from "../src/db";
 
 config({ path: ".env.local" });
 config({ path: ".env" });
 
 async function main() {
+  // Load environment files before importing the database module, whose
+  // validation intentionally fails when DATABASE_URL is missing.
+  const { db } = await import("../src/db");
   await migrate(db, { migrationsFolder: "./drizzle" });
   console.log("Database migrations applied.");
 }
