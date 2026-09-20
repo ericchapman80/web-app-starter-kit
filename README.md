@@ -6,6 +6,15 @@ This repository contains a reusable M0 web-app foundation. Consuming application
 
 Requirements: Node.js 20+, npm, and a Docker-compatible runtime such as Docker Desktop, Colima, or Rancher Desktop.
 
+On macOS with Homebrew, the recommended lightweight setup is:
+
+```sh
+brew bundle
+colima start
+```
+
+`Brewfile` installs Colima, the Docker CLI, and standalone Docker Compose. Docker Desktop is not required.
+
 ```sh
 cp .env.example .env.local
 # Use `docker-compose` with standalone Compose, or `docker compose` with the plugin.
