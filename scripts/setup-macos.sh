@@ -34,4 +34,5 @@ if [[ "$runtime" == "colima" ]]; then
   echo "Setup complete. Start the runtime with: colima start"
 else
   echo "Setup complete. Open Rancher Desktop and select the dockerd (Moby) engine."
+  echo "Set Application > Environment > PATH management to Automatic, then restart your terminal."
 fi
