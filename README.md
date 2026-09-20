@@ -10,10 +10,19 @@ On macOS with Homebrew, the recommended lightweight setup is:
 
 ```sh
 brew bundle
+
+# Configure nvm once in your shell, then load it.
+mkdir -p ~/.nvm
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+echo '[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"' >> ~/.zshrc
+source ~/.zshrc
+
+nvm install
+nvm use
 colima start
 ```
 
-`Brewfile` installs Colima, the Docker CLI, and standalone Docker Compose. Docker Desktop is not required.
+`Brewfile` installs nvm, Colima, the Docker CLI, and standalone Docker Compose. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
 
 ```sh
 cp .env.example .env.local
