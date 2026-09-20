@@ -86,13 +86,15 @@ Stop the PostgreSQL container and remove the project network with:
 ./scripts/compose.sh down
 ```
 
-When you are finished with all container-based projects, stop the Colima runtime with:
+When using Colima, stop the runtime after you are finished with all container-based projects:
 
 ```sh
 colima stop
 ```
 
 Stopping Colima is optional if you plan to keep using containers.
+
+When using Rancher Desktop, quit Rancher Desktop from its menu bar application when you want to stop its runtime.
 
 ### If Homebrew installation was interrupted
 
