@@ -1,9 +1,7 @@
 # web-app-starter-kit — workstation dependencies.
 # Install with: brew bundle
-# Start the Docker-compatible engine with: colima start
-
-# Lightweight Docker-compatible runtime for macOS, including Apple silicon.
-brew "colima"
+# The setup script selects a Docker-compatible runtime for the machine.
+# Run: ./scripts/setup-macos.sh
 
 # Docker CLI and standalone Compose command.
 brew "docker"

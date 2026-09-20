@@ -9,7 +9,7 @@ Requirements: Node.js 20+, npm, and a Docker-compatible runtime such as Docker D
 On macOS with Homebrew, the recommended lightweight setup is:
 
 ```sh
-brew bundle
+./scripts/setup-macos.sh
 
 # Configure nvm once in your shell. Add these two lines to ~/.zshrc
 # manually; do not append them every time you set up the project.
@@ -23,7 +23,14 @@ nvm use
 colima start
 ```
 
-`Brewfile` installs nvm, Colima, the Docker CLI, and standalone Docker Compose. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
+`Brewfile` installs shared tools. The setup script automatically selects Rancher Desktop for older Intel Macs running macOS 12 or earlier, and Colima for newer Intel Macs and Apple silicon. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
+
+To choose a runtime explicitly:
+
+```sh
+WEB_APP_STARTER_RUNTIME=rancher ./scripts/setup-macos.sh
+WEB_APP_STARTER_RUNTIME=colima ./scripts/setup-macos.sh
+```
 
 ```sh
 cp .env.example .env.local
@@ -62,7 +69,7 @@ Pressing `Ctrl+C` normally stops the active Homebrew command safely. Check for a
 ps aux | grep '[b]rew'
 ```
 
-If no install process is listed, rerun `brew bundle`. An existing Homebrew `node` installation can remain on the machine; nvm takes precedence after `nvm use` and does not require removing it.
+If no install process is listed, rerun `./scripts/setup-macos.sh`. An existing Homebrew `node` installation can remain on the machine; nvm takes precedence after `nvm use` and does not require removing it.
 
 ## Verification
 

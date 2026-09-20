@@ -1,0 +1,2 @@
+# Docker-compatible runtime for older Intel Macs.
+cask "rancher"
