@@ -2,6 +2,8 @@
 
 This repository contains a reusable M0 web-app foundation. Consuming applications add their own domain models, authentication, workflows, integrations, and user experience; none of those product concerns belong here.
 
+For the handoff checklist used when creating a new application from this repository, see [docs/CONSUMING-THE-STARTER.md](docs/CONSUMING-THE-STARTER.md).
+
 ## Local development
 
 Requirements: Node.js 20+, npm, and a Docker-compatible runtime such as Docker Desktop, Colima, or Rancher Desktop.
