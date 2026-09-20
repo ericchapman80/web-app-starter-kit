@@ -9,5 +9,8 @@ brew "colima"
 brew "docker"
 brew "docker-compose"
 
+# JavaScript runtime and npm.
+brew "node"
+
 # Optional: uncomment if you want local PostgreSQL client commands such as psql.
 # brew "libpq"
