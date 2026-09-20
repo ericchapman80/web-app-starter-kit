@@ -1,4 +1,2 @@
 # Docker-compatible runtime for older Intel Macs.
 cask "rancher"
-# Lightweight Docker CLI used to control Rancher's Moby engine.
-brew "docker"

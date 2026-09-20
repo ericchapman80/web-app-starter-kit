@@ -23,7 +23,7 @@ nvm use
 colima start
 ```
 
-`Brewfile` installs shared tools. The setup script automatically selects Rancher Desktop for older Intel Macs running macOS 12 or earlier, and Colima for newer Intel Macs and Apple silicon. Rancher Desktop supplies Docker Compose directly; the Colima path installs standalone Compose. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
+`Brewfile` installs shared tools. The setup script automatically selects Rancher Desktop for older Intel Macs running macOS 12 or earlier, and Colima for newer Intel Macs and Apple silicon. Rancher Desktop supplies the Docker CLI and Compose directly; the Colima path installs the Docker CLI and standalone Compose through Homebrew. The `.nvmrc` file keeps local development and CI on the same Node.js major version. Docker Desktop is not required.
 
 For Rancher Desktop, set **Application → Environment → PATH management** to **Automatic**. Restart the terminal afterward so the Rancher utilities and Compose plugin are available.
 
